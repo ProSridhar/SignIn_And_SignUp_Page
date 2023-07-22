@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/653060caf6.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-box">
+        <form>
+          <h1 id="title">SignUp</h1>
+          <div class="input-group">
+            <div class="input-field" id="nameField">
+              <i class="fa-solid fa-user"></i
+              ><input type="text" placeholder="Enter Name" />
+            </div>
+
+            <div class="input-field">
+              <i class="fa-solid fa-envelope"></i
+              ><input type="text" placeholder="Enter Email" />
+            </div>
+
+            <div class="input-field">
+              <i class="fa-solid fa-lock"></i
+              ><input type="password" placeholder="Enter Password" />
+            </div>
+            <p>Forgot password? <a href="">Click Here</a></p>
+          </div>
+          <div class="btn-field">
+            <button type="button" id="signupbtn">Sign Up</button>
+            <button type="button" class="inactive" id="signinbtn">
+              Sign In
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script>
+      let signinbtn = document.getElementById("signinbtn");
+      let signupbtn = document.getElementById("signupbtn");
+      let title = document.getElementById("title");
+      let nameField = document.getElementById("nameField");
+
+      signinbtn.onclick = function () {
+        nameField.style.maxHeight = "0";
+        title.innerHTML = "Sign in";
+        signupbtn.classList.add("inactive");
+        signinbtn.classList.remove("inactive");
+      };
+      signupbtn.onclick = function () {
+        nameField.style.maxHeight = "60px";
+        title.innerHTML = "Sign Up";
+        signupbtn.classList.remove("inactive");
+        signinbtn.classList.add("inactive");
+      };
+    </script>
+  </body>
+</html>
